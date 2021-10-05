@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://Scripts/Bullet.gd"
+}, {
+"base": "Node2D",
+"class": "BulletCount",
+"language": "GDScript",
+"path": "res://Scripts/BulletCount.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
 } ]
 _global_script_class_icons={
+"Bullet": "",
+"BulletCount": "",
 "Player": ""
 }
 
@@ -23,6 +35,10 @@ _global_script_class_icons={
 config/name="Downwell-Clone"
 run/main_scene="res://Scenes/Well.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+PersistantData="*res://Scripts/PersistantData.gd"
 
 [display]
 
