@@ -13,8 +13,9 @@ The first level of the first world:
     * ~~Jump~~
     * ~~Shoot on air to delay jump~~
     * ~~Reload on landing~~
-    * Bounce off props and enemies
+    * ~~Bounce off props~~
     * Bullets can damage enemies
+    * Bounce off enemies
 * Enemies
     * Turtle
     * Bubble

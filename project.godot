@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
+}, {
+"base": "Area2D",
+"class": "Prop",
+"language": "GDScript",
+"path": "res://Scripts/Prop.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
 "BulletCount": "",
-"Player": ""
+"Player": "",
+"Prop": ""
 }
 
 [application]
@@ -45,6 +51,8 @@ PersistantData="*res://Scripts/PersistantData.gd"
 window/size/width=576
 window/size/height=1024
 window/size/resizable=false
+window/size/test_width=288
+window/size/test_height=512
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

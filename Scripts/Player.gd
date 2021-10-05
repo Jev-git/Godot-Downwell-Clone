@@ -66,3 +66,6 @@ func _physics_process(delta):
 				m_fMovement.y += m_fGravity * (m_fLowJumpMultiplier - 1)
 	
 	m_fMovement = move_and_slide(m_fMovement, Vector2.UP)
+
+func bounce():
+	m_fMovement.y = m_fJumpHeight
