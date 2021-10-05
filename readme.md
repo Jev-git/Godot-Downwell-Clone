@@ -5,7 +5,7 @@ October 2021
 # MVP
 The first level of the first world:
 * Player
-    * Jump
+    * ~~Jump~~
     * Shoot on air to delay jump
     * Reload on landing
     * Bounce off props and enemies
