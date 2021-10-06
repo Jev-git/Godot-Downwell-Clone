@@ -61,7 +61,8 @@ func _physics_process(delta):
 			m_nGunBootTimer.start(m_fShootInterval)
 			
 			var nBullet: Bullet = m_psBullet.instance()
-			$BulletSpawnPos.add_child(nBullet)
+			nBullet.global_position = $BulletSpawnPos.global_position
+			get_tree().get_current_scene().add_child(nBullet)
 		else:
 			if m_fMovement.y > 0:
 				m_fMovement.y += m_fGravity * (m_fFallMultiplier - 1)

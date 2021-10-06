@@ -16,7 +16,8 @@ The first level of the first world:
     * ~~Bounce off props~~
     * ~~Bounce off enemies~~
     * ~~Bullets can damage enemies~~
-* Enemies: https://downwell.fandom.com/wiki/Category:Enemies
+* Enemies
+    * Can damage player
 * Map
     * Made a map manually
 # Things that take time
