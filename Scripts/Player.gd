@@ -22,6 +22,9 @@ onready var m_fMovement: Vector2 = Vector2.ZERO
 signal shoot
 signal landed
 
+func get_class():
+	return "Player"
+
 func _ready():
 	m_nGunBootTimer.connect("timeout", self, "_set_gun_boot_off_cooldown")
 

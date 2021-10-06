@@ -14,13 +14,9 @@ The first level of the first world:
     * ~~Shoot on air to delay jump~~
     * ~~Reload on landing~~
     * ~~Bounce off props~~
-    * Bullets can damage enemies
-    * Bounce off enemies
-* Enemies
-    * Turtle
-    * Bubble
-    * Worm
-    * Bat
+    * ~~Bounce off enemies~~
+    * ~~Bullets can damage enemies~~
+* Enemies: https://downwell.fandom.com/wiki/Category:Enemies
 * Map
     * Made a map manually
 # Things that take time

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "BadBubble",
+"language": "GDScript",
+"path": "res://Scripts/Enemies/BadBubble.gd"
+}, {
 "base": "Area2D",
 "class": "Bullet",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/Prop.gd"
 } ]
 _global_script_class_icons={
+"BadBubble": "",
 "Bullet": "",
 "BulletCount": "",
 "Player": "",
