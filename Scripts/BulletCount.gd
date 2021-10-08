@@ -11,15 +11,13 @@ func _ready():
 		var nSprite = m_psBulletCountSingle.instance()
 		add_child(nSprite)
 		nSprite.position.y = -iBullet * 64
-	get_parent().get_node("Player").connect("landed", self, "_reload")
-	get_parent().get_node("Player").connect("shoot", self, "_shoot")
 
-func _reload():
+func reload():
 	m_iBulletLeft = m_iMaxBullet
 	for nBullet in get_children():
 		nBullet.visible = true
 
-func _shoot():
+func shoot():
 	if m_iBulletLeft > 0:
 		get_child(m_iBulletLeft - 1).visible = false
 	m_iBulletLeft -= 1

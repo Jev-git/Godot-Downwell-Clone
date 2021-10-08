@@ -1,10 +1,13 @@
 # Doing
-Player movement
+Mappp
 # Collision
 * Layer 0: Player
 * Layer 1: Walls
 * Layer 2: Bullets
 * Layer 3: Enemies
+# Terminology
+* HitBox: Area where you deal damage to other
+* HurtBox: Area where you receive damage from other
 # Time frame
 October 2021
 # MVP
@@ -16,8 +19,9 @@ The first level of the first world:
     * ~~Bounce off props~~
     * ~~Bounce off enemies~~
     * ~~Bullets can damage enemies~~
+    * ~~Blink, bounce, knocked back and vulnerable after taking damage~~
 * Enemies
-    * Can damage player
+    * ~~Can damage player~~
 * Map
     * Made a map manually
 # Things that take time
