@@ -24,6 +24,8 @@ The first level of the first world:
     * ~~Can damage player~~
 * Map
     * Made a map manually
+    * Win condition: reach the bottom
+    * Lose condition: HP = 0
 # Things that take time
 * Side room with upgrade
 * Shop
