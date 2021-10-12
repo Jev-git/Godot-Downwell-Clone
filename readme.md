@@ -1,5 +1,8 @@
 # Doing
-Mappp
+Mappp:
+* One way platform
+* Prop
+* Enemies
 # Collision
 * Layer 0: Player
 * Layer 1: Walls

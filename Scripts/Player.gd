@@ -16,12 +16,12 @@ onready var m_bIsVulnerable: bool = false
 onready var m_nSprite: Sprite = $Sprite
 
 onready var m_nGunBootTimer: Timer = $GunBootCooldownTimer
-onready var m_nBulletCount: BulletCount = get_parent().get_node("BulletCount")
+onready var m_nBulletCount: BulletCount = get_parent().get_node("CanvasLayer/BulletCount")
 onready var m_bGunBootOffCooldown: bool = true
 onready var m_bTriggerReleased: bool = false
 onready var m_bIsOnAirLastFrame: bool = true
 
-onready var m_nHPCount: Node2D = get_parent().get_node("HPCount")
+onready var m_nHPCount: Node2D = get_parent().get_node("CanvasLayer/HPCount")
 
 onready var m_nKnockbackTimer: Timer = $KnockbackTimer
 onready var m_bIsBeingKnockedBack: bool = false
