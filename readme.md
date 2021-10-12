@@ -1,6 +1,6 @@
 # Doing
 Mappp:
-* One way platform
+* ~~One way platform~~
 * Prop
 * Enemies
 # Collision
