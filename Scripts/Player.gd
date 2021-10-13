@@ -28,6 +28,8 @@ onready var m_bIsBeingKnockedBack: bool = false
 onready var m_bKnockbackToTheRight: bool = true
 export var m_fKnockbackSpeed: float = 100
 
+onready var m_nGunBootPos: Position2D = $GunBootPos
+
 onready var m_fMovement: Vector2 = Vector2.ZERO
 
 func get_class():
@@ -54,6 +56,15 @@ func _stop_knockback():
 	m_bIsBeingKnockedBack = false
 
 func _physics_process(delta):
+	for iCollision in get_slide_count():
+		var oCollider: Object = get_slide_collision(iCollision).collider
+		if oCollider is TileMap:
+			var vTilePos: Vector2 = oCollider.world_to_map(m_nGunBootPos.global_position * 2)
+			var iTileId: int = oCollider.get_cellv(vTilePos)
+			if iTileId == 1:
+				bounce()
+				oCollider.set_cellv(vTilePos, -1)
+	
 	m_fMovement.y += m_fGravity
 	
 	if Input.is_action_pressed("ui_right"):
@@ -87,7 +98,7 @@ func _physics_process(delta):
 			m_nGunBootTimer.start()
 			
 			var nBullet: Bullet = m_psBullet.instance()
-			nBullet.global_position = $BulletSpawnPos.global_position
+			nBullet.global_position = m_nGunBootPos.global_position
 			get_tree().get_current_scene().add_child(nBullet)
 		else:
 			if m_fMovement.y > 0:

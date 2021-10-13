@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Tilesets/GroundTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scripts/BackgroundTileMap.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackgroundTileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+collision_layer = 2
+collision_mask = 13
+format = 1
+tile_data = PoolIntArray( 0, 0, 196613, 2, 0, 196613, 65537, 1, 0, 65539, 1, 0, 131078, 0, 196613, 196615, 0, 196613, 262152, 0, 196608, 262153, 0, 196610, 327690, 0, 5, 327696, 0, 6, 327697, 0, 196610, 393226, 0, 131077, 393230, 0, 196608, 393231, 0, 131076, 393232, 0, 65543, 458763, 0, 5, 458765, 0, 196613, 458767, 0, 131077, 524299, 0, 65542, 524300, 0, 7, 524302, 0, 196613, 589833, 0, 196608, 589834, 0, 196610, 589836, 0, 131075, 589837, 0, 196610, 655368, 0, 196613, 655372, 0, 65541, 720903, 0, 196613, 720907, 0, 196608, 720908, 0, 65543, 786437, 0, 196608, 786438, 0, 7, 786441, 0, 6, 786442, 0, 196610, 851974, 0, 65542, 851975, 0, 131076, 851976, 0, 196609, 851977, 0, 65543, 917511, 0, 131077 )
+script = ExtResource( 2 )

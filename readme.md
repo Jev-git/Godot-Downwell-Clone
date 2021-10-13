@@ -1,7 +1,8 @@
 # Doing
 Mappp:
 * ~~One way platform~~
-* Prop
+* ~~Prop~~
+* Crate
 * Enemies
 # Collision
 * Layer 0: Player

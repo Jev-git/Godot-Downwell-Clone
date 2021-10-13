@@ -47,7 +47,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Prop",
 "language": "GDScript",
-"path": "res://Scripts/Prop.gd"
+"path": "res://Scripts/Area2DProp.gd"
 } ]
 _global_script_class_icons={
 "BadBubble": "",
