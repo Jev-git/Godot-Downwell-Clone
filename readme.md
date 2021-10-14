@@ -2,8 +2,10 @@
 Mappp:
 * ~~One way platform~~
 * ~~Prop~~
-* Crate
+* ~~Crate~~
 * Enemies
+
+Bug: Player stomp incorrectly
 # Collision
 * Layer 0: Player
 * Layer 1: Walls

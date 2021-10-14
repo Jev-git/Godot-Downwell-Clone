@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "Prop",
 "language": "GDScript",
 "path": "res://Scripts/Area2DProp.gd"
+}, {
+"base": "Enemy",
+"class": "Turtle",
+"language": "GDScript",
+"path": "res://Scripts/Enemies/Turtle.gd"
 } ]
 _global_script_class_icons={
 "BadBubble": "",
@@ -57,7 +62,8 @@ _global_script_class_icons={
 "Enemy": "",
 "HPCount": "",
 "Player": "",
-"Prop": ""
+"Prop": "",
+"Turtle": ""
 }
 
 [application]

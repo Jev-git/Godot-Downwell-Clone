@@ -17,18 +17,16 @@ onready var m_bIsKnockingBack: bool = false
 
 func _ready():
 	m_nHurtBox.connect("body_entered", self, "_on_body_entered")
-	m_nHurtBox.connect("area_entered", self, "_on_area_entered")
 	m_nHitBox.connect("body_entered", self, "_damage_player")
 	m_nKnockBackTimer.connect("timeout", self, "_on_knock_back_timeout")
+
+func get_class():
+	return "Enemy"
 
 func _on_body_entered(_nOtherBody: Node2D):
 	if _nOtherBody.get_class() == "Player" and m_bCanBeStomped:
 		_nOtherBody.bounce()
 		queue_free()
-
-func _on_area_entered(_nOtherArea: Area2D):
-	if _nOtherArea.get_class() == "Bullet" and m_bCanBeShot:
-		_take_damage(1)
 
 func _damage_player(_nPlayer: Node2D):
 	if _nPlayer.get_class() == "Player":
@@ -51,3 +49,7 @@ func _process(delta):
 func _physics_process(delta):
 	if m_bIsKnockingBack:
 		move_and_slide(Vector2(0, m_fKnockBackSpeed))
+
+func get_shot():
+	if m_bCanBeShot:
+		_take_damage(1)
