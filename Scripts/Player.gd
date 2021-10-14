@@ -59,11 +59,16 @@ func _physics_process(delta):
 	for iCollision in get_slide_count():
 		var oCollider: Object = get_slide_collision(iCollision).collider
 		if oCollider is TileMap:
-			var vTilePos: Vector2 = oCollider.world_to_map(m_nGunBootPos.global_position * 2)
-			var iTileId: int = oCollider.get_cellv(vTilePos)
-			if iTileId == 1:
+			var vTilePos: Vector2 = oCollider.world_to_map(global_position * 2)
+			if oCollider.get_cellv(vTilePos + Vector2(0, 1)) == 1:
 				bounce()
-				oCollider.set_cellv(vTilePos, -1)
+				oCollider.set_cellv(vTilePos + Vector2(0, 1), -1)
+			elif oCollider.get_cellv(vTilePos + Vector2(-1, 1)) == 1:
+				bounce()
+				oCollider.set_cellv(vTilePos + Vector2(-1, 1), -1)
+			elif oCollider.get_cellv(vTilePos + Vector2(1, 1)) == 1:
+				bounce()
+				oCollider.set_cellv(vTilePos + Vector2(1, 1), -1)
 	
 	m_fMovement.y += m_fGravity
 	
