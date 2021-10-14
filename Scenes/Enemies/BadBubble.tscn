@@ -7,3 +7,15 @@
 script = ExtResource( 2 )
 m_iHP = 3
 m_fMoveSpeed = 60.0
+
+[node name="HitBox" parent="." index="2"]
+visible = true
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+visible = false
+
+[node name="HurtBox" parent="." index="3"]
+visible = true
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+visible = false

@@ -1,11 +1,5 @@
 # Doing
-Mappp:
-* ~~One way platform~~
-* ~~Prop~~
-* ~~Crate~~
-* Enemies
-
-Bug: Player stomp incorrectly
+Add enemies to map chunk
 # Collision
 * Layer 0: Player
 * Layer 1: Walls

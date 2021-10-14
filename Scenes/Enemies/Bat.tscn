@@ -14,5 +14,17 @@ m_fMoveSpeed = 200.0
 visible = false
 texture = ExtResource( 4 )
 
+[node name="HitBox" parent="." index="2"]
+visible = true
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+visible = false
+
+[node name="HurtBox" parent="." index="3"]
+visible = true
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+visible = false
+
 [node name="CurlUpSprite" type="Sprite" parent="." index="5"]
 texture = ExtResource( 2 )

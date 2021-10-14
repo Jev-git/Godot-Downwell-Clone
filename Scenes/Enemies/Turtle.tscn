@@ -6,9 +6,20 @@
 
 [node name="Turtle" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+m_bCanBeShot = false
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
 
+[node name="HitBox" parent="." index="2"]
+visible = true
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+visible = false
+
+[node name="HurtBox" parent="." index="3"]
+visible = true
+
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
+visible = false
 scale = Vector2( 1, 1.2 )
