@@ -10,7 +10,7 @@ func _ready():
 	_update_label()
 
 func _update_label():
-	m_nLabel.text = "HP: %s/%s" % [m_iCurrentHP, m_iMaxHP]
+	m_nLabel.text = "HP: %d/%d" % [m_iCurrentHP, m_iMaxHP]
 
 func take_damage():
 	m_iCurrentHP -= 1

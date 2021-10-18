@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Tilesets/GroundTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Tilesets/OneWayPlatformTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Enemies/BadBubble.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Enemies/Bat-CurlUp.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Enemies/Turtle.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Tilesets/GroundTileset.png" type="Texture" id=7]
+
+[sub_resource type="TileSet" id=1]
+0/name = "BadBubble"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 56, 36 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Bat-CurlUp"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 24, 56 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Turtle"
+2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 72, 28 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[node name="MapChunk" type="Node2D"]
+
+[node name="SideWallCover" type="Node2D" parent="."]
+z_index = 10
+
+[node name="Sprite" type="Sprite" parent="SideWallCover"]
+position = Vector2( 64, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="Sprite2" type="Sprite" parent="SideWallCover"]
+position = Vector2( 64, 992 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="Sprite3" type="Sprite" parent="SideWallCover"]
+position = Vector2( 480, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="Sprite4" type="Sprite" parent="SideWallCover"]
+position = Vector2( 480, 992 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -128, -144 )
+scale = Vector2( 13, 20.25 )
+z_index = -10
+texture = ExtResource( 3 )
+centered = false
+
+[node name="BackgroundTileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 1 )
+collision_layer = 2
+collision_mask = 13
+format = 1
+tile_data = PoolIntArray( 2, 0, 5, 15, 0, 5, 65538, 0, 65541, 65551, 0, 65541, 131074, 0, 65541, 131087, 0, 65541, 196610, 0, 65541, 196623, 0, 65541, 262146, 0, 65541, 262159, 0, 65541, 327682, 0, 65541, 327695, 0, 65541, 393218, 0, 65541, 393231, 0, 65541, 458754, 0, 65541, 458767, 0, 65541, 524290, 0, 65541, 524303, 0, 65541, 589826, 0, 65541, 589839, 0, 65541, 655362, 0, 65541, 655375, 0, 65541, 720898, 0, 65541, 720911, 0, 65541, 786434, 0, 65541, 786447, 0, 65541, 851970, 0, 65541, 851983, 0, 65541, 917506, 0, 65541, 917519, 0, 65541, 983042, 0, 65541, 983055, 0, 65541, 1048578, 0, 65541, 1048591, 0, 65541, 1114114, 0, 65541, 1114127, 0, 65541, 1179650, 0, 65541, 1179663, 0, 65541, 1245186, 0, 65541, 1245199, 0, 65541, 1310722, 0, 65541, 1310735, 0, 65541, 1376258, 0, 65541, 1376271, 0, 65541, 1441794, 0, 65541, 1441807, 0, 65541, 1507330, 0, 65541, 1507343, 0, 65541, 1572866, 0, 65541, 1572879, 0, 65541, 1638402, 0, 65541, 1638415, 0, 65541, 1703938, 0, 65541, 1703951, 0, 65541, 1769474, 0, 65541, 1769487, 0, 65541, 1835010, 0, 65541, 1835023, 0, 65541, 1900546, 0, 65541, 1900559, 0, 65541, 1966082, 0, 65541, 1966095, 0, 65541, 2031618, 0, 131077, 2031631, 0, 131077 )
+
+[node name="OneWayPlatformTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 4 )
+collision_layer = 2
+collision_mask = 13
+format = 1
+tile_data = PoolIntArray( 2359304, 1, 0, 2359305, 1, 0, 2359306, 1, 0, 2359307, 1, 0, 2359308, 1, 0, 2359309, 1, 0, 2359310, 1, 0 )
+
+[node name="EnemyTileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1

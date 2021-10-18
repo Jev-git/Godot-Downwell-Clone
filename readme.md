@@ -1,5 +1,7 @@
 # Doing
-Add enemies to map chunk
+BUG?:
+* Move into a wall while jumping up from a prop destroy the prop immediately instead of upon landing.
+* Bullet can go through the floor sometime
 # Collision
 * Layer 0: Player
 * Layer 1: Walls

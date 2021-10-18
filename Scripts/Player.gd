@@ -18,7 +18,7 @@ onready var m_nSprite: Sprite = $Sprite
 onready var m_nGunBootTimer: Timer = $GunBootCooldownTimer
 onready var m_nBulletCount: BulletCount = get_parent().get_node("CanvasLayer/BulletCount")
 onready var m_bGunBootOffCooldown: bool = true
-onready var m_bTriggerReleased: bool = false
+onready var m_bTriggerReleased: bool = true
 onready var m_bIsOnAirLastFrame: bool = true
 
 onready var m_nHPCount: Node2D = get_parent().get_node("CanvasLayer/HPCount")
@@ -29,6 +29,7 @@ onready var m_bKnockbackToTheRight: bool = true
 export var m_fKnockbackSpeed: float = 100
 
 onready var m_nGunBootPos: Position2D = $GunBootPos
+onready var m_nStompHitBox: Area2D = $StompHitBox
 
 onready var m_fMovement: Vector2 = Vector2.ZERO
 
@@ -56,19 +57,7 @@ func _stop_knockback():
 	m_bIsBeingKnockedBack = false
 
 func _physics_process(delta):
-	for iCollision in get_slide_count():
-		var oCollider: Object = get_slide_collision(iCollision).collider
-		if oCollider is TileMap:
-			var vTilePos: Vector2 = oCollider.world_to_map(global_position * 2)
-			if oCollider.get_cellv(vTilePos + Vector2(0, 1)) == 1:
-				bounce()
-				oCollider.set_cellv(vTilePos + Vector2(0, 1), -1)
-			elif oCollider.get_cellv(vTilePos + Vector2(-1, 1)) == 1:
-				bounce()
-				oCollider.set_cellv(vTilePos + Vector2(-1, 1), -1)
-			elif oCollider.get_cellv(vTilePos + Vector2(1, 1)) == 1:
-				bounce()
-				oCollider.set_cellv(vTilePos + Vector2(1, 1), -1)
+	_check_for_stomping_on_prop()
 	
 	m_fMovement.y += m_fGravity
 	
@@ -88,9 +77,9 @@ func _physics_process(delta):
 			m_bIsOnAirLastFrame = false
 			m_nGunBootTimer.stop()
 		
-		m_bTriggerReleased = false
 		if Input.is_action_just_pressed("ui_accept"):
 			m_fMovement.y = m_fJumpHeight
+			m_bTriggerReleased = false
 	else:
 		m_bIsOnAirLastFrame = true
 		if Input.is_action_just_released("ui_accept"):
@@ -110,20 +99,32 @@ func _physics_process(delta):
 				m_fMovement.y += m_fGravity * (m_fFallMultiplier - 1)
 			elif m_fMovement.y < 0 and !Input.is_action_pressed("ui_accept"):
 				m_fMovement.y += m_fGravity * (m_fLowJumpMultiplier - 1)
-	
+		
 	m_fMovement = move_and_slide(m_fMovement, Vector2.UP)
 
 func bounce():
 	m_fMovement.y = m_fJumpHeight
 
 func take_damage(_vEnemyPosition: Vector2):
-	m_nHPCount.take_damage()
-	_knock_back(_vEnemyPosition.x < position.x)
-	bounce()
-	m_nVulnerableTimer.start()
-	m_nVulnerableIntervalTimer.start()
+	if !m_bIsVulnerable:
+		m_bIsVulnerable = true
+		m_nHPCount.take_damage()
+		_knock_back(_vEnemyPosition.x < position.x)
+		bounce()
+		m_nVulnerableTimer.start()
+		m_nVulnerableIntervalTimer.start()
 
 func _knock_back(_bToTheRight: bool):
 	m_nKnockbackTimer.start()
 	m_bIsBeingKnockedBack = true
 	m_bKnockbackToTheRight = _bToTheRight
+
+func _check_for_stomping_on_prop():
+	for iCollision in get_slide_count():
+		var nTileMap: Object = get_slide_collision(iCollision).collider
+		if nTileMap is TileMap:
+			var vCollidePos: Vector2 = TileMapUtil.get_collided_tile_pos(nTileMap, global_position)
+			if vCollidePos != Vector2(-1, -1):
+				if nTileMap.tile_set.tile_get_name(nTileMap.get_cellv(vCollidePos)) == "Prop":
+					bounce()
+					nTileMap.set_cellv(vCollidePos, -1)
