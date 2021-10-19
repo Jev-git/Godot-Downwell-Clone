@@ -1,5 +1,4 @@
-# Doing
-BUG?:
+# BUG:
 * Move into a wall while jumping up from a prop destroy the prop immediately instead of upon landing.
 # Collision
 * Layer 0: Player
