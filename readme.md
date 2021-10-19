@@ -1,7 +1,6 @@
 # Doing
 BUG?:
 * Move into a wall while jumping up from a prop destroy the prop immediately instead of upon landing.
-* Bullet can go through the floor sometime
 # Collision
 * Layer 0: Player
 * Layer 1: Walls
@@ -25,7 +24,7 @@ The first level of the first world:
 * Enemies
     * ~~Can damage player~~
 * Map
-    * Made a map manually
+    * ~~Made a map manually~~
     * Win condition: reach the bottom
     * Lose condition: HP = 0
 # Things that take time
